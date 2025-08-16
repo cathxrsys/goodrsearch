@@ -1,0 +1,60 @@
+{% load static %}
+{% load pagination %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'search/css/styles.css' %}">
+</head>
+<body>
+    <div class="main">
+        <form action="{% url 'search' %}" method="GET">
+            <input name="query" value="{{ query }}" class="search-bar minimized-bar" type="text" placeholder="Напишите свой запрос">
+        </form>
+
+        {% if files|length != 0 %}
+
+            <div class="files">
+
+                {% for file in files %}
+                    <div class="file">
+                        <div class="container">
+                            <img class="fileico" src="{% static 'search/img' %}/{{ file.4 }}.png" alt="{{ file.4 }}">
+                            <div class="filedesc">
+                                <p class="filename">{{ file.2 }} ({{ file.3 }}КБ)</p>
+                                <a class="linktext" href="https://drive.google.com/file/d/{{ file.0 }}/view?usp=drive_link">
+                                    https://drive.google.com/file/d/{{ file.0 }}/view?usp=drive_link
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/uc?export=download&id={{ file.0 }}">
+                            <img class='download-icon' src="{% static 'search/img/download.png' %}" alt="DOWN">
+                        </a>
+                    </div>
+                {% endfor %}
+
+                <div class="pag">
+                    <a class="pag-button" href="{% url 'search' %}?query={{ query }}&page=1">&lt;&lt;</a>
+                    
+                    {% for p in page_obj.paginator.page_range|slice_pages:page_obj.number %}
+                        <a class="pag-button {% if page == p %}current{% endif %}" href="{% url 'search' %}?query={{ query }}&page={{ p }}">{{ p }}</a>
+                    {% endfor %}
+
+                    <a class="pag-button" href="{% url 'search' %}?query={{ query }}&page={{ page_obj.paginator.num_pages }}">&gt;&gt;</a>
+
+                </div>
+            
+            </div>
+
+        {% else %}
+
+            <p class='error'>Ничего не найдено</p>
+
+        {% endif %}
+
+    </div>
+</body>
+</html>

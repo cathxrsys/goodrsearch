@@ -1,0 +1,12 @@
+django
+django-crontab
+django-template-utils
+python-pptx
+python-docx
+PyPDF2
+pandas
+openpyxl
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+pymorphy3

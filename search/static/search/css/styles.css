@@ -1,0 +1,141 @@
+* {
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.17);
+}
+
+body {
+    background-color: #151515;
+    overflow-x: hidden;
+    padding-bottom: 200px;
+}
+
+input {outline:none;}
+
+
+.main {
+    margin-top: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #151515;
+}
+
+.search-bar {
+    background-color: #222222;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 60vw;
+    height: 60px;
+    border-radius: 2000px;
+    color: white;
+    font-size: 15px;
+}
+
+.search-bar:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.minimized-bar {
+    height: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.files {
+    min-height: 500px;
+    width: 60vw;
+    /* background-color: #222222; */
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.file {
+    display: flex;
+    width: 60vw;
+    background-color: #222222;
+    padding: 30px 15px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.file .container {
+    
+    
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    /* width: 60vw; */
+
+}
+
+.linktext {
+    color: #52DDAF;
+}
+
+.filename {
+    color: #C7CADD;
+    padding-bottom: 10px;
+}
+
+.fileico {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+}
+
+.pag {
+    /* background-color: #222222; */
+    display: flex;
+    width: fit-content;
+    padding: 20px 20px;
+    padding-left: 0px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.pag-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C7CADD;
+    text-decoration: none;
+    margin-right: 10px;
+    background-color: #323232;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.main p.error {
+    color: rgb(255, 0, 0);
+    padding-top: 50px;
+}
+
+.download-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+}
+
+.current {
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+}
